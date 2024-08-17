@@ -1,0 +1,271 @@
+body {
+  background-color: #000000;
+}
+.nav-item a:hover {
+  color: rgb(254, 254, 255);
+  border-bottom: 2px solid white;
+  border-collapse: collapse;
+}
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  margin-top: 20px;
+  background-repeat: no-repeat;
+}
+.hero-section {
+  background-color: black;
+  background-image: url(assets/main.png);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+/* new */
+
+.main {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Dark overlay for better text visibility */
+  z-index: 1;
+  transition: background-color 0.5s ease;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* animation: fadeInUp 1s ease-out; */
+}
+
+.hero-section:hover::before {
+  background-color: rgba(0, 0, 0, 0.3); /* Lighten the overlay on hover */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* animation effect */
+.typing-animation::after {
+  content: "|";
+  animation: blink 1s infinite;
+  opacity: 1;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Features section */
+.features-section {
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  background-color: #d9d4d4;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.feature-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.feature-card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fff;
+}
+
+.feature-card .card-body {
+  padding: 10px;
+}
+
+.feature-card .card-title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.feature-card .card-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .feature-card .card-title {
+    font-size: 1rem;
+  }
+
+  .feature-card .card-text {
+    font-size: 0.875rem;
+  }
+}
+.feature-card img.rounded-circle {
+  max-width: 300px;
+  border: 5px solid #333;
+}
+
+/* about section */
+.about-section {
+  margin-top: 50px;
+  background-color: #000000; /* Dark background */
+  margin-bottom: 100px;
+}
+
+.about-section .card {
+  border-radius: 10px;
+  background-color: #ccc8c8;
+  color: #000000;
+}
+
+.about-section .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section .card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* about section */
+
+/* Footer Section */
+footer ul li a {
+  position: relative;
+  transition: color 0.3s;
+}
+
+footer ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+footer ul li a:hover::before {
+  width: 100%;
+}
+
+/* ul {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+ul li a:hover:before {
+  top: 0;
+}
+
+ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+ul li:nth-child(2) a:before {
+  background: #55acee;
+}
+
+ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+ul li:nth-child(4) a:before {
+  background: #dd4b39;
+}
